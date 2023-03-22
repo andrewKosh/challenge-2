@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <title>Frontend Mentor | NFT preview card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Outfit:300,400,600&display=swap');
+
+        .attribution {
+            position: absolute;
+            bottom: 10px;
+            font-size: 11px;
+
+        }
+
+        .txt300 {
+            font-size: 12px;
+            font-weight: 300;
+        }
+
+        .txt400 {
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        .txt600 {
+            font-weight: 600;
+        }
+
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        }
+
+        html {
+            box-sizing: border-box;
+            height: 100%;
+        }
+
+        body {
+            position: relative;
+            height: 100%;
+            background-color: hsl(217, 54%, 11%);
+            font-family: Outfit, sans-serif;
+            font-size: 18px;
+        }
+
+        .container {
+            padding: 15px;
+            margin: 0 auto;
+        }
+
+        .card {
+            margin: auto;
+            max-width: 20%;
+            background-color: hsl(216, 50%, 16%);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .eth__image {
+            position: relative;
+        }
+
+        .eth__image > .product {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+
+        .view {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 98%;
+            background: rgba(0, 255, 247, 0.5);
+            opacity: 0;
+            border-radius: 5px;
+        }
+
+        .view > img {
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            text-align: center;
+        }
+
+        .view:hover {
+            opacity: 1;
+            transition: .5s;
+            cursor: pointer;
+        }
+
+        .title {
+            color: hsl(0, 0%, 100%);
+            padding: 10px 0;
+        }
+
+        #author {
+            color: hsl(0, 0%, 100%);
+        }
+
+        .active__elem:hover,
+        #author:hover {
+            color: hsl(178, 100%, 50%);
+            cursor: pointer;
+            transition: .5s;
+        }
+
+        .eth__price {
+            color: hsl(178, 100%, 50%);
+        }
+
+        .grey__text {
+            color: hsl(215, 51%, 70%);
+        }
+
+        /*TODO*/
+        .eth__price:before {
+            content: url("images/icon-ethereum.svg");
+            position: relative;
+            top: 4px;
+        }
+
+        .time__left:before {
+            content: url("images/icon-clock.svg");
+            position: relative;
+            top: 4px;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid hsl(215, 51%, 70%);
+        }
+
+        .author__div {
+            padding: 5px 0;
+            display: flex;
+        }
+
+        .author__div > p {
+            margin: auto 0;
+        }
+
+        .avatar {
+            width: 33px;
+            height: 100%;
+            margin-right: 20px;
+            margin-top: 10px;
+            border: white;
+            border-image: fill
+        }
+
+        .author__div > img {
+            margin: auto 10px auto 0;
+            background-color: #fff;
+            padding: 1px;
+            border-radius: 90px;
+        }
+
+        @media (max-width: 1025px) {
+            .card {
+                max-width: 25%;
+            }
+        }
+
+        @media (max-width: 769px) {
+            .card {
+                max-width: 30%;
+            }
+        }
+
+        @media (max-width: 541px) {
+            .card {
+                max-width: 50%;
+            }
+        }
+
+        @media (max-width: 426px) {
+            .card {
+                max-width: 70%;
+            }
+        }
+
+        @media (max-width: 376px) {
+            .card {
+                max-width: 80%;
+            }
+        }
+
+        @media (max-width: 321px) {
+            .card {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="container">
+        <div class="eth__image">
+            <img src="images/image-equilibrium.jpg" alt="equilibrium" class="product">
+            <div class="view">
+                <img src="images/icon-view.svg" alt="view">
+            </div>
+        </div>
+
+
+        <div class="title active__elem txt600">
+            Equilibrium #3429
+        </div>
+        <div class="description grey__text txt300">
+            Our Equilibrium collection promotes balance and calm.
+        </div>
+
+        <div class="info txt400">
+            <div class="eth__price">
+                0.041 ETH
+            </div>
+            <div class="time__left grey__text">
+                3 days left
+            </div>
+        </div>
+
+        <div class="author__div grey__text txt300">
+            <img class="avatar" src="images/image-avatar.png" alt="avatar"><p>Creation of <span id="author" class="active__elem">Jules Wyvern</span></p>
+        </div>
+    </div>
+</div>
+
+
+<div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+</div>
+</body>
+</html>
